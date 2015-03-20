@@ -14,7 +14,7 @@ gulp.task('clean', function(){
 gulp.task('styles', function() {
   gulp.src('./src/scss/style.scss')
     .pipe(sass({
-      outputStyle: 'compressed'
+      //outputStyle: 'compressed'
     }))
     .pipe(gulp.dest('./build/css'));
 });

@@ -4,11 +4,11 @@
 	color: white;
 	background-color: rgba($blue, 0.8);
 
-	> .logo {
+	.logo {
 
 	}
 
-	> .intropara {
+	.intropara {
 		@extend .small-text;
 	}
 }

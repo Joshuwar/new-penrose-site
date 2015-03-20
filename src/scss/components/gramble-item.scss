@@ -1,0 +1,65 @@
+
+
+.gramble-item {
+
+	&:before {
+		content: "";
+		display: block;
+		padding-top: 100%; 	/* makes height = width */
+	}
+	
+	width: 100%;
+	display: block;
+
+	color: white;
+	background-color: $medium-gray;
+	position: relative;
+	
+	.article-header {
+		margin-right: $card-margin;
+		border-bottom: 1px white solid;
+		position: absolute;
+		bottom: $base-font-size*2;
+	}
+
+	.title {
+		width: 75%;
+	}
+
+	.excerpt {
+		width: 80%;
+	}
+
+	> .background-image {
+		position: absolute;
+		top: 0;
+		opacity: 0.6;
+	}
+
+	.readmore-link {
+		bottom: $base-font-size/2;
+		position: absolute;
+		text-align: center;
+		display: block;
+		width: calc(100% - 16vw);
+		opacity: 0;
+	}
+	&:hover .grambleitem-content {
+		background-color: rgba($pink, 0.8);
+	}
+	&:hover .readmore-link { 
+		opacity: 1;
+	}
+}
+
+.grambleitem-content {
+	position: absolute;
+	top: 0;
+	margin: $card-margin;
+	height: calc(100% - 8vw);
+	padding-left: $card-margin;
+	padding-right: $card-margin;
+	width: calc(100% - 8vw);
+
+}
+
