@@ -1,0 +1,14 @@
+
+.site-header {
+	@extend .base-card;
+	color: white;
+	background-color: rgba($blue, 0.8);
+
+	> .logo {
+
+	}
+
+	> .intropara {
+		@extend .small-text;
+	}
+}

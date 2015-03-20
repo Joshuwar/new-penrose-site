@@ -1,0 +1,11 @@
+
+$card-margin: 4vw;
+
+.base-card {
+	background-color: $light-gray;
+	margin: $card-margin;
+	padding: $card-margin;
+	//height: calc(100% - $card-margin*2);
+	position: relative;
+	overflow: hidden;
+}

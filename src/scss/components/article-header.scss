@@ -1,0 +1,21 @@
+// used for arrangements containing any combination of: title, section name, excerpt, bullets
+
+.article-header {
+
+	> .label {
+		@extend .contrast-header;
+	}
+
+	> .title {
+		@extend .large-header;
+	}
+
+	> .excerpt {
+		@extend .small-text;
+	}
+	> .points {
+		
+	}
+
+}
+
