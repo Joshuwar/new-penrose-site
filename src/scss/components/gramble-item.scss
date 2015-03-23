@@ -1,25 +1,26 @@
 
+$gramble-padding: 3%;
 
 .gramble-item {
-
+	
 	&:hover, &:active, &:focus {
 		color: $white;
 	}
 	&:before {
 		content: "";
 		display: block;
-		padding-top: 100%; 	/* makes height = width */
+		padding-top: 100%; 	// makes height = width
 	}
-	
-	width: 100%;
-	display: block;
+
+	float: left;
 	overflow: hidden;
 	color: white;
 	background-color: $medium-gray;
 	position: relative;
+	margin-bottom: -1px; // removes *occasional* 1px strip between rows (caused by rounding errors?)
 	
 	.article-header {
-		margin-right: $card-margin;
+		width: 100% - $gramble-padding*2;
 		border-bottom: 1px white solid;
 		position: absolute;
 		bottom: $base-font-size*2;
@@ -27,6 +28,7 @@
 
 	.title {
 		width: 75%;
+		font-size: $base-font-size*1.3;
 	}
 
 	.excerpt {
@@ -37,14 +39,14 @@
 		@include transition(all 400ms ease-out);
 		position: absolute;
 		top: 0;
-		opacity: 0.6;
+		opacity: 0.5;
 	}
 
 	.readmore-link {
 		bottom: $base-font-size*0.9;
 		position: absolute;
-		display: block;
-		width: calc(100% - 8vw);
+		//display: block;
+		width: 100% - $gramble-padding*2;
 		opacity: 0;
 		@include transition(all 300ms ease-out);
 	}
@@ -63,13 +65,34 @@
 	@include transition(all 300ms ease-out);
 	position: absolute;
 	top: 0;
-	margin: $card-margin;
-	height: calc(100% - 8vw);
-	padding-left: $card-margin;
-	padding-right: $card-margin;
-	width: calc(100% - 8vw);
+	margin: $gramble-padding;
+	height: 100% - $gramble-padding*2;
+	padding-left: $gramble-padding;
+	padding-right: $gramble-padding;
+	width: 100% - $gramble-padding*2;
 	&:active {
 		@include transform(scale(0.95));
 	}
 }
+
+// Breakpoints
+
+.gramble-item {
+	width: 33.3333%;
+	@include media($tablet) {
+		width: 50%;
+	}
+	@include media($mobile) {
+		width: 100%;
+	}
+	@include media($desktop-large) {
+		width: 25%;	
+	}
+}
+
+
+
+
+
+
 
