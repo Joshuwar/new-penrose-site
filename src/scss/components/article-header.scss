@@ -4,6 +4,8 @@
 
 	> .label {
 		@extend .contrast-header;
+		margin-bottom: $base-font-size;
+		display: block;
 	}
 
 	> .title {

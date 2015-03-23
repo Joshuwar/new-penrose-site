@@ -2,6 +2,9 @@
 
 .gramble-item {
 
+	&:hover, &:active, &:focus {
+		color: $white;
+	}
 	&:before {
 		content: "";
 		display: block;
@@ -10,7 +13,7 @@
 	
 	width: 100%;
 	display: block;
-
+	overflow: hidden;
 	color: white;
 	background-color: $medium-gray;
 	position: relative;
@@ -31,18 +34,19 @@
 	}
 
 	> .background-image {
+		@include transition(all 400ms ease-out);
 		position: absolute;
 		top: 0;
 		opacity: 0.6;
 	}
 
 	.readmore-link {
-		bottom: $base-font-size/2;
+		bottom: $base-font-size*0.9;
 		position: absolute;
-		text-align: center;
 		display: block;
-		width: calc(100% - 16vw);
+		width: calc(100% - 8vw);
 		opacity: 0;
+		@include transition(all 300ms ease-out);
 	}
 	&:hover .grambleitem-content {
 		background-color: rgba($pink, 0.8);
@@ -50,9 +54,13 @@
 	&:hover .readmore-link { 
 		opacity: 1;
 	}
+	&:hover .background-image {
+		@include transform(scale(1.05));
+	}
 }
 
 .grambleitem-content {
+	@include transition(all 300ms ease-out);
 	position: absolute;
 	top: 0;
 	margin: $card-margin;
@@ -60,6 +68,8 @@
 	padding-left: $card-margin;
 	padding-right: $card-margin;
 	width: calc(100% - 8vw);
-
+	&:active {
+		@include transform(scale(0.95));
+	}
 }
 

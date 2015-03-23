@@ -3,6 +3,7 @@
 	@extend .base-card;
 	.intropara {
 		@extend .small-text;
+		margin-bottom: 0;
 	}
 }
 

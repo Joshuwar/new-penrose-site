@@ -1,0 +1,14 @@
+
+.home-hero {
+	
+	.case-study {
+		display: none;
+		@include media($mobile) {
+			display: block;
+		}
+		&:first-of-type {
+			display: block;	
+		}
+	}
+}
+

@@ -1,5 +1,41 @@
 
+$study-bg-1:$yellow;
+$study-btn-1:$blue;
+
+$study-bg-2:$pink;
+$study-btn-2:$pink;
+
+$study-bg-3:$green;
+$study-btn-3:$green;
 
 .case-study {
 	@extend .base-card;
+	.readmore-link {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: $base-font-size;
+		color: $white;
+	}
+
+	&:first-of-type {
+		background-color: tint($study-bg-1, 75%);
+		.readmore-link {
+			background-color: rgba($study-btn-1, 0.8);
+		}
+	}
+	&:nth-of-type(2) {
+		background-color: tint($study-bg-2, 90%);
+		.readmore-link {
+			background-color: rgba($study-btn-2, 0.8);
+		}
+	}
+	&:nth-of-type(3) {
+		background-color: tint($study-bg-3, 90%);
+		.readmore-link {
+			background-color: rgba($study-btn-3, 0.8);
+		}
+	}
 }
+
