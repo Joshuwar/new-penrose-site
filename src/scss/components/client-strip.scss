@@ -1,0 +1,23 @@
+
+.client-strip {
+
+}
+
+.client-square {
+	@extend .base-card;
+	text-align: center;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+
+	&:before {
+		content: "";
+		display: block;
+		padding-top: 100%; 	/* makes height = width */
+	}
+
+	img {
+		max-width: 75%;
+		max-height: 75%;
+	}
+}

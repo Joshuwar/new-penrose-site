@@ -1,0 +1,38 @@
+
+$card-padding: 4vw;
+
+.footer-strip {
+	@extend .base-card;
+}
+
+.footer-menu {
+	padding: $card-padding;
+	padding-bottom: 0;
+	line-height: $base-font-size*1.5;
+	a {
+		color: $dark-gray;
+	}
+}
+
+.footer-details {
+	@extend .small-text;
+	padding: $card-padding;
+}
+
+.footer-contactbox {
+	background-color: rgba($pink, 0.75);
+	color: $white;
+	padding: $card-padding;
+	p {
+		@extend .small-text;
+		width: 75%;
+		margin-bottom: $base-font-size*2;
+	}	
+	a {
+		color: $white;
+		display: block;
+	}
+	.phone-number {
+		margin-bottom: $base-font-size;
+	}
+}
