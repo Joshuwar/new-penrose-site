@@ -70,7 +70,7 @@ gulp.task('watch', ['default', 'server'], function() {
   });
 });
 
-gulp.task('pages', ['clean'], function() {
+gulp.task('pages', function() {
   var tap = require('gulp-tap');
   var Handlebars = require('handlebars');
   var path = require('path');
