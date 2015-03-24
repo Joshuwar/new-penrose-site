@@ -83,6 +83,9 @@ $gramble-padding: 3%;
 	@include media($tablet) {
 		width: 50%;
 	}
+	@include media($tablet-portrait) {
+		width: 50%;
+	}
 	@include media($mobile) {
 		width: 100%;
 	}
