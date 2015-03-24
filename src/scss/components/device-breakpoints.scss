@@ -2,8 +2,8 @@
 // device breakpoints
 
 $mobile: new-breakpoint(max-width 560px 4);
-$tablet-portrait: new-breakpoint(max-width 768px min-width 561px);
-$tablet: new-breakpoint(max-width 1024px 4);
+$tablet-portrait: new-breakpoint(min-width 561px max-width 768px 4);
+$tablet: new-breakpoint(min-width 769px max-width 1024px 4);
 $desktop: new-breakpoint(min-width 1025px 12);
 $desktop-med: new-breakpoint(min-width 1260px 12);
 $desktop-large: new-breakpoint(min-width 1600px 12);
