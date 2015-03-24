@@ -42,6 +42,7 @@ gulp.task('javascripts', function() {
     .pipe(gulp.dest('./build/javascripts'));
 });
 
+// confusingly named task at the moment...
 gulp.task('templates', function() {
   gulp.src('./src/*.html')
 
@@ -52,7 +53,7 @@ gulp.task('templates', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'javascripts', 'images', 'fonts', 'templates');
+  gulp.start('styles', 'javascripts', 'images', 'fonts', 'templates', 'pages');
 });
 
 gulp.task('watch', ['default', 'server'], function() {
@@ -61,6 +62,7 @@ gulp.task('watch', ['default', 'server'], function() {
   gulp.watch('./src/images/**/*.*', ['images']);
   gulp.watch('./src/fonts/**/*.*', ['fonts']);
   gulp.watch('./src/*.html', ['templates']);
+  gulp.watch('./src/templates/*.hbs', ['pages']);
 
   var server = livereload();
   gulp.watch('build/**').on('change', function(file) {
@@ -85,7 +87,7 @@ gulp.task('pages', ['clean'], function() {
   gulp.src("./src/templates/**.hbs")
     .pipe(tap(function(file) {
       var template = Handlebars.compile(file.contents.toString());
-      var html = template({ title: "Gulp + Handlebars is easy"});
+      var html = template({ title: "A title could go here"});
       file.contents = new Buffer(html, "utf-8");
     }))
     .pipe(rename(function(path) {
