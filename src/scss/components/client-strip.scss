@@ -1,23 +1,68 @@
 
 .client-strip {
-
+	@extend .base-card;
+	padding-bottom: $card-margin;
 }
 
 .client-square {
 	@extend .base-card;
+	
+	background-color: tint($light-gray, 50%);
 	text-align: center;
-	 display: flex;
-	 align-items: center;
-	 justify-content: center;
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	float: left;
+	margin-right: 0;
+	margin-bottom: 0;
+	
 	&:before {
 		content: "";
 		display: block;
-		padding-top: 100%; 	/* makes height = width */
+		padding-top: 100%; 	// makes height = width
 	}
 
 	img {
 		max-width: 75%;
 		max-height: 75%;
 	}
+
+	@include media($tablet-portrait) {
+		width: calc((100% - #{$card-margin}*4) / 3); // 3 squares per row
+		margin-top: 0;
+		&:nth-of-type(n+4) { 
+			display: none; // only show first 3 squares
+		}
+	}
+
+	@include media($tablet) {
+		width: calc((100% - #{$card-margin}*5) / 4); // 4 squares per row
+		margin-top: 0;
+		&:nth-of-type(n+5) { 
+			display: none; // only show first 4 squares
+		}
+	}
+
+	@include media($mobile) {
+		width: calc((100% - #{$card-margin}*3) / 2); // calculation to show 2 squares per row on mobile
+		&:nth-of-type(n+5) { 
+			display: none; // only show first 4 squares on mobile
+		}
+	}
+
+	@include media($tablet-portrait) {
+		width: calc((100% - #{$card-margin}*4) / 3); // 3 squares per row
+		margin-top: 0;
+		&:nth-of-type(n+4) { 
+			display: none; // only show first 3 squares
+		}
+	}
+
+	@include media($desktop) {
+		width: calc((100% - #{$card-margin}*6) / 5); // 4 squares per row
+		margin-top: 0;
+	}
+
+
+
 }
