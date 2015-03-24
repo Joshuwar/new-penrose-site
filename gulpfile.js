@@ -87,7 +87,6 @@ gulp.task('pages', ['clean'], function() {
       var template = Handlebars.compile(file.contents.toString());
       var html = template({ title: "Gulp + Handlebars is easy"});
       file.contents = new Buffer(html, "utf-8");
-      console.log(html);
     }))
     .pipe(rename(function(path) {
       path.extname = ".html";
