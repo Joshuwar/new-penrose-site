@@ -10,5 +10,51 @@
 			display: block;	
 		}
 	}
+
+	.cover-image-container {
+		@include media($mobile) {
+			display: none;
+		}
+		margin: $card-margin;
+		background: url(../images/jon-post.jpg) no-repeat center center; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height: calc(100% - 8vw);
+		min-height: 600px;
+	}
+	.case-study {
+		@include media($desktop) {
+			position: absolute;
+			overflow: visible;
+			bottom: 100px;
+			width: calc(100% - 8vw);
+			.cover-image, .readmore-link {
+				display: none;
+			}
+			.article-header {
+				width: calc((100% + 8vw)/2.5 - 8vw); // this calculates the size of the overlay (expecting 40%) and makes the case study header fit inside that
+				color: $white;
+				position: absolute;
+				bottom: 10px;
+				padding: 0;
+				border-bottom: $white solid 1px;
+				margin-left: 4vw;
+			}
+			.title {
+				width: 50%;
+				margin-right: 5%;
+				margin-bottom: 2vw;
+			}
+			.excerpt {
+				position: absolute;
+				bottom: 0;
+				margin-bottom: 2vw;
+				width: 45%;
+				left: 55%;
+			}
+		}	
+	}
 }
 

@@ -1,4 +1,6 @@
 
+$desktop-overlay-width: 40%;
+
 .site-header {
 	@extend .base-card;
 	color: white;
@@ -10,5 +12,11 @@
 
 	.intropara {
 		@extend .small-text;
+	}
+	@include media($desktop) {
+		position: absolute;
+		top: 0;
+		width: $desktop-overlay-width;
+		height: calc(100% - 8vw);
 	}
 }
