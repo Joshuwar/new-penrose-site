@@ -37,21 +37,6 @@ $card-padding: 4vw;
 	}
 }
 
-@include media($desktop) {
-	.footer-menu {
-		width: 20%;
-		float: left;
-	}
-	.footer-details {
-		width: 35%;
-		float: left;
-	}
-	.footer-contactbox {
-		width: 45%;
-		float: left;
-	}
-}
-
 @include media($tablet) {
 	.footer-menu {
 		width: 50%;
@@ -82,6 +67,21 @@ $card-padding: 4vw;
 	}
 	.footer-contactbox {
 		width: 100%;
+		float: left;
+	}
+}
+
+@include media($desktop) {
+	.footer-menu {
+		width: 20%;
+		float: left;
+	}
+	.footer-details {
+		width: 35%;
+		float: left;
+	}
+	.footer-contactbox {
+		width: 45%;
 		float: left;
 	}
 }

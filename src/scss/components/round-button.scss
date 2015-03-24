@@ -1,0 +1,19 @@
+
+$round-button-width: $card-margin;
+$round-button-color: $pink;
+
+.round-button {
+	width: $round-button-width;
+	height: $round-button-width;
+	border-radius: $round-button-width/2;
+	background-color: $round-button-color;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	img {
+		max-width: 40%;
+		max-height: 40%;
+	}
+}

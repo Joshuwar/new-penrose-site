@@ -56,5 +56,23 @@
 			}
 		}	
 	}
+	.next-button, .zoom-button {
+		@extend .round-button;
+		background-color: $white;
+		position: absolute;
+	}
+
+	.next-button {
+		right: $card-margin*1.5;
+		bottom: $card-margin*1.5;
+		img {
+			margin-left: 5%;
+		}
+	}
+
+	.zoom-button {
+		right: calc( #{$card-margin}*2 + #{$round-button-width};
+		bottom: $card-margin*1.5;
+	}
 }
 

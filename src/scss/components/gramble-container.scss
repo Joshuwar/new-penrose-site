@@ -1,5 +1,11 @@
 
 .gramble-container {
 	@extend .base-card;
+
+	.gramble-morebtn {
+		@extend .round-button;
+		background-color: $white;
+		margin: $card-margin/2 auto;
+	}
 }
 
