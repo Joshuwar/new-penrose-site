@@ -68,6 +68,33 @@ gulp.task('watch', ['default', 'server'], function() {
   });
 });
 
+gulp.task('pages', ['clean'], function() {
+  var tap = require('gulp-tap');
+  var Handlebars = require('handlebars');
+  var path = require('path');
+  var fs = require('fs');
+  var rename = require('gulp-rename');
+  // Register partials
+  var partials = path.join(__dirname,"/src/partials/");
+  fs.readdirSync(partials).forEach(function (file) {
+      var source = fs.readFileSync(path.join(partials, file), "utf8"),
+          partial = /(.+)\.html/.exec(file).pop();
+      Handlebars.registerPartial(partial, source);
+  });
+  // collect templates
+  gulp.src("./src/templates/**.hbs")
+    .pipe(tap(function(file) {
+      var template = Handlebars.compile(file.contents.toString());
+      var html = template({ title: "Gulp + Handlebars is easy"});
+      file.contents = new Buffer(html, "utf-8");
+      console.log(html);
+    }))
+    .pipe(rename(function(path) {
+      path.extname = ".html";
+    }))
+    .pipe(gulp.dest("build/pages"));
+});
+
 gulp.task('server', function(next) {
     var fs = require('fs'),
         path = require('path'),

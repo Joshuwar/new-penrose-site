@@ -18,6 +18,8 @@
   "dependencies": {
     "express": "~4.6.1",
     "consolidate": "~0.10.0",
-    "handlebars": "~2.0.0-alpha.4"
+    "handlebars": "~2.0.0-alpha.4",
+    "gulp-tap": "~0.1.3",
+    "gulp-rename": "~1.2.0"
   }
 }
