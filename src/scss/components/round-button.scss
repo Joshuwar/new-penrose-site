@@ -12,8 +12,21 @@ $round-button-color: $pink;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	@include transition(all 0.3s ease-in-out);
 	img {
 		max-width: 40%;
 		max-height: 40%;
+	}
+	&:hover {
+		@include transform(scale(1.05));
+	}
+	&:active {
+		@include transform(scale(0.95));
+		@include transition(all 0.05s ease-in);
+	}
+	@include media($mobile) {
+		width: $round-button-width*4;
+		height: $round-button-width*4;
+		border-radius: $round-button-width*2;
 	}
 }

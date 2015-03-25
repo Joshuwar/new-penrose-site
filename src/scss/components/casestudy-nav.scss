@@ -1,0 +1,42 @@
+
+.casestudy-nav {
+	@extend .contrast-header;
+
+	position: absolute;
+	bottom: 2vw;
+	left: 8vw;
+	z-index: 1;
+	width: 40%;
+	padding: 0 $card-margin;
+	left: $card-margin;
+
+	a {
+		color: $white;
+		opacity: 1;
+		width: 20%;
+		float: left;
+		padding: $card-margin*0.5 $card-margin*0.25;
+		@include transition(all 0.4s ease-in);
+		&:hover {
+			background-color: rgba($white, 0.15);
+		}
+	}
+	a.viewcase {
+		text-align: center;
+		width: 60%;
+	}
+	a.next {
+		text-align: right;
+	}
+	a.disabled {
+		cursor: default;
+		opacity: 0.2;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+
+	@include media($mobile) {
+		display: none;
+	}
+}

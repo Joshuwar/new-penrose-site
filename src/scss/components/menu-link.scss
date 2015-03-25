@@ -8,9 +8,9 @@
 
 // vars
 
-$button-width: 38px;
-$button-height: 30px;
-$bar-thickness: 2px;
+$button-width: 30px;
+$button-height: 25px;
+$bar-thickness: 1px;
 $button-pad: 2px;
 $button-trans-delay: 0.3s;
 
@@ -72,6 +72,7 @@ $button-background-color-active: transparent;
   width: 100%;
   height: $bar-thickness;
   background-color: $bar-color;
+  @include transition(all 0.5s ease-in-out);
   content: "";
 }
 
@@ -79,7 +80,8 @@ $button-background-color-active: transparent;
 	background: $white;
 	&:after, 
 	&:before {
-		background-color: $white;	
+		background-color: $white;
+    @include transition(all 0.5s ease-in-out);	
 	}
 }
 
@@ -236,40 +238,45 @@ $button-background-color-active: transparent;
 
 .cmn-toggle-switch__htra {
   background-color: $button-background-color;
+  @include transition(all 0.3s ease-in-out);
 }
 
 .cmn-toggle-switch__htra span {
   transition: transform $button-trans-delay;
+  @include transition(all 0.3s ease-in-out);
 }
 
 .cmn-toggle-switch__htra span::before,
 .cmn-toggle-switch__htra span::after {
-  
+  @include transition(all 0.3s ease-in-out);
 }
 
 .cmn-toggle-switch__htra span::before {
   transform-origin: top left;
-  transition: transform $button-trans-delay, width $button-trans-delay, top $button-trans-delay;
+  //transition: transform $button-trans-delay, width $button-trans-delay, top $button-trans-delay;
 }
 
 .cmn-toggle-switch__htra span::after {
   transform-origin: bottom left;
-  transition: transform $button-trans-delay, width $button-trans-delay, bottom $button-trans-delay;
+  //transition: transform $button-trans-delay, width $button-trans-delay, bottom $button-trans-delay;
 }
 
 /* active state, i.e. menu open */
 
 .cmn-toggle-switch__htra.active {
   background-color: $button-background-color-active;
+  @include transition(all 0.5s ease-in-out);
 }
 
 .cmn-toggle-switch__htra.active span {
   transform: rotate(180deg);
+  @include transition(all 0.5s ease-in-out);
 }
 
 .cmn-toggle-switch__htra.active span::before,
 .cmn-toggle-switch__htra.active span::after {
   width: 50%;
+  @include transition(all 0.5s ease-in-out);
 }
 
 .cmn-toggle-switch__htra.active span::before {

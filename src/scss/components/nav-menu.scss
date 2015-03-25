@@ -6,12 +6,12 @@
 	height: 100%;
 	z-index: 3;
 	top: 0;
-	left: -100%;
+	@include transform(translateX(-100%));
 	@include transition(all 0.5s ease-in-out);
 }
 
 .nav-menu-open .nav-menu {
-	left: 0;
+	@include transform(translateX(0));
 }
 
 main {
@@ -31,13 +31,17 @@ body {
 // nav menu styling
 
 .nav-menu-wrapper {
-	padding: 20vh 30vw;
 	width: 100%;
 	height: 100%;
 	position: relative;
-	line-height: 2em;
+	font-size: $base-font-size*1.2;
+	line-height: $base-font-size*1.4;
+	padding: 15vh 30vw;
 	ul {
 		margin-top: $card-margin;
+	}
+	li {
+		margin-bottom: $base-font-size;
 	}
 	a, a:hover, a:active, a:focus {
 		color: $white;
@@ -45,6 +49,9 @@ body {
 	}
 	a:hover {
 		border-bottom: 1px solid $white;
+	}
+	@include media($mobile) {
+		padding: 5vh 5vw;
 	}
 }
 
@@ -54,9 +61,11 @@ body {
 	background-color: rgba($dark-gray, 0);
 	color: $white;
 	.cmn-toggle-switch span {
+		@include transition(all 0.5s ease-in-out);
 		background: $white;
 		&:after, 
 		&:before {
+			@include transition(all 0.5s ease-in-out);
 			background-color: $white;	
 		}
 	}

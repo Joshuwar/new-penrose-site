@@ -6,6 +6,19 @@
 		@extend .round-button;
 		background-color: $white;
 		margin: $card-margin/2 auto;
+		img {
+			@include transition-property(transform);
+			@include transition-duration(1.4s);
+			@include transition-timing-function(ease-in);
+		}
+		&:active {
+			img {
+				@include transform(rotate(-360deg));
+				@include transition-property(transform);
+				@include transition-duration(0.3s);
+				@include transition-timing-function(ease-in);
+			}
+		}
 	}
 }
 

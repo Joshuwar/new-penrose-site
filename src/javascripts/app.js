@@ -14,7 +14,9 @@ $(document).ready(function() {
 	var isLateralNavAnimating = false;
 	
 	//open/close lateral navigation
-	$('.cmn-toggle-switch').on('click', function(event){
+
+	// this needs changing so you can click the child links inside .nav-menu, whilst retaining the ability to close the overlay by clicking the background
+	$('.cmn-toggle-switch, .nav-menu').on('click', function(event){
 		event.preventDefault();
 		//stop if nav animation is running 
 		if( !isLateralNavAnimating ) {

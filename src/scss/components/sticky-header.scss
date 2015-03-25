@@ -18,3 +18,7 @@
 .sticky-header.cloned {
 	z-index: 100 !important;
 }
+
+.nav-menu-open .sticky-header.cloned {
+	display: block !important;
+}
