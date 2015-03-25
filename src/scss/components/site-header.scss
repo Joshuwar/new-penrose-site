@@ -7,7 +7,12 @@ $desktop-overlay-width: 40%;
 	background-color: rgba($blue, 0.8);
 
 	.logo {
+		font-size: $base-font-size*1.2;
+	}
 
+	.cmn-toggle-switch {
+		margin-bottom: $card-margin/2;
+		display: block;
 	}
 
 	.intropara {
@@ -15,8 +20,8 @@ $desktop-overlay-width: 40%;
 	}
 	@include media($desktop) {
 		position: absolute;
-		top: 0;
+		top: -$card-margin;
 		width: $desktop-overlay-width;
-		height: calc(100% - 8vw);
+		height: 100%;
 	}
 }
