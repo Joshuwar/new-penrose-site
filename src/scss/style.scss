@@ -5,7 +5,7 @@
 
 
 // Components
-
+@import "components/scrollbar";
 @import "components/device-breakpoints";
 @import "components/base-typography";
 @import "components/base-card";
@@ -25,6 +25,8 @@
 @import "components/sticky-header";
 @import "components/nav-menu";
 @import "components/casestudy-nav";
+@import "components/casestudy-body";
+@import "components/casestudy-gallery";
 
 // Modules
 @import "modules/section-card";
@@ -32,3 +34,4 @@
 
 // Layouts
 @import "layouts/casestudy-card";
+@import "layouts/casestudy-page";

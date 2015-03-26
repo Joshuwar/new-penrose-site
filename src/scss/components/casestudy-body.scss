@@ -1,0 +1,26 @@
+
+.casestudy-body {
+	line-height: $base-font-size*1.4;
+	margin: $card-margin;
+	
+	p {
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	
+		@include media($desktop) {
+			min-width:500px;
+			max-width: 700px; 
+		}
+		@include media($mobile) {
+			width: 100%;
+		}
+		@include media($tablet-portrait) {
+			width: 90%;
+		}
+		@include media($tablet) {
+			width: 80%;
+		}
+	}
+	
+}

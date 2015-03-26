@@ -1,0 +1,93 @@
+.casestudy-hero {
+	position: relative;
+	.cover-image-container {
+		margin: $card-margin;
+		background: url(../images/jon-post.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height: calc(100% - 10vw);
+		min-height: 600px;
+	}
+	.article-header { 
+		background-color: rgba($blue, 0.8);
+		color: $white;
+		bottom: 0;
+		position: absolute;
+		width: calc(100% - #{$card-margin}*2);
+		padding: $card-margin/2;
+		margin-left: $card-margin;
+		@include media($mobile) {
+			padding: $card-margin;
+		}
+	}
+	.excerpt {
+		float: right;
+		width: 50%;
+		padding-right: 25%;
+		clear: both;
+		@include media($tablet-portrait) {
+			width: 50%;
+			padding-right: 0%;
+		}
+		@include media($mobile) {
+			float: none;
+			width: 100%;
+			padding-right: 0%;
+		}
+	}
+	.title {
+		position: absolute;
+		width: 30%;
+		bottom: $card-margin/2;
+		margin-bottom: 0;
+		@include media($mobile) {
+			position: relative;
+			width: 100%;
+			padding-right: 0%;
+			bottom: 0;
+			margin-bottom: $base-font-size/2;
+		}
+	}
+	.key-points {
+		float: right;
+		width: 50%;
+		margin-bottom: $base-font-size;
+		li {
+			margin-top: $base-font-size/2;
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+		&:after {
+			content: "";
+			background-color: rgba($white, 0.5);
+			height: 1px;
+			width: 50%;
+			display: block;
+			margin-top: $base-font-size;
+		}
+		@include media($mobile) {
+			float: none;
+			width: 100%;
+			margin-bottom: 0;
+			&:after {
+				background-color: transparent;
+			}
+		}
+	}
+	.logo {
+		width: $card-margin*2;
+		@include media($mobile) {
+			width: 20%;
+			margin-bottom: $card-margin;
+		}
+		@include media($tablet-portrait) {
+			width: 15%;
+		}
+		@include media($tablet) {
+			width: 15%;
+		}
+	}
+}

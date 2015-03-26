@@ -6,7 +6,7 @@
 	bottom: 2vw;
 	left: 8vw;
 	z-index: 1;
-	width: 40%;
+	width: $desktop-overlay-width;
 	padding: 0 $card-margin;
 	left: $card-margin;
 
@@ -37,6 +37,12 @@
 	}
 
 	@include media($mobile) {
+		display: none;
+	}
+	@include media($tablet) {
+		display: none;
+	}
+	@include media($tablet-portrait) {
 		display: none;
 	}
 }

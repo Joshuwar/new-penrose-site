@@ -1,7 +1,7 @@
 // used for arrangements containing any combination of: title, section name, excerpt, bullets
 
 .article-header {
-
+	position: relative;
 	> .label {
 		@extend .contrast-header;
 		margin-bottom: $base-font-size;

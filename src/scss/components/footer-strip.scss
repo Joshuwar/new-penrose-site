@@ -12,6 +12,7 @@ $card-padding: 4vw;
 	a {
 		color: $dark-gray;
 		padding-bottom: 3px;
+		border-bottom: 1px solid transparent;
 		&:hover {
 			border-bottom: 1px solid $dark-gray;
 		}

@@ -6,6 +6,9 @@
 		@extend .round-button;
 		background-color: $white;
 		margin: $card-margin/2 auto;
+		@include media($mobile) {
+			margin: $card-margin auto;
+		}
 		img {
 			@include transition-property(transform);
 			@include transition-duration(1.4s);

@@ -29,6 +29,17 @@ $(document).ready(function() {
 			});
 		}
 	});
+
+	// fade hero image on scroll
+	$(window).scroll(function(){
+		var opacityFloor = 0.2;
+		var scrollPos = (-$(window).scrollTop());
+		var setOpacity = (scrollPos/800) + 1;
+		if(setOpacity <= 0.2) {
+			setOpacity = opacityFloor
+		}
+		$('.cover-image-container').css({'opacity':setOpacity});
+	});
 });
 
 

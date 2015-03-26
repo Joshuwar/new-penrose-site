@@ -1,5 +1,5 @@
 
-$study-bg-1:$yellow;
+$study-bg-1:$blue;
 $study-btn-1:$blue;
 
 $study-bg-2:$pink;
@@ -9,6 +9,7 @@ $study-bg-3:$green;
 $study-btn-3:$green;
 
 .case-study {
+	color: $white;
 	@extend .base-card;
 	.readmore-link {
 		display: block;
@@ -20,13 +21,15 @@ $study-btn-3:$green;
 	}
 
 	&:first-of-type {
-		background-color: tint($study-bg-1, 75%);
+		//background-color: tint($study-bg-1, 75%);
+		background-color: rgba($study-bg-1, 0.8);
 		.readmore-link {
 			background-color: rgba($study-btn-1, 0.8);
 		}
 	}
 	&:nth-of-type(2) {
-		background-color: tint($study-bg-2, 90%);
+		//background-color: tint($study-bg-2, 90%);
+		background-color: rgba($study-bg-2, 0.8);
 		.readmore-link {
 			background-color: rgba($study-btn-2, 0.8);
 		}
