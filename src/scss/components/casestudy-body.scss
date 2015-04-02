@@ -3,7 +3,7 @@
 	line-height: $base-font-size*1.4;
 	margin: $card-margin;
 	
-	p {
+	p, ul, h1, h2, h3, h4, h5, h6 {
 		width: 50%;
 		margin-left: auto;
 		margin-right: auto;
@@ -21,6 +21,13 @@
 		@include media($tablet) {
 			width: 80%;
 		}
+	}
+	.service-list {
+		list-style: disc;
+		padding-left: 1em;
+	}
+	h2, h3, h4, h5, h6 {
+		font-weight: 500;
 	}
 	
 }

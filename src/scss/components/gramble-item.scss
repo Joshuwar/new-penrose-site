@@ -1,8 +1,10 @@
 
 $gramble-padding: 3%;
 
+// $gramble-colors: red, orange, yellow, green, blue, purple;
+$gramble-colors: $pink, $green, $yellow, $blue;
+
 .gramble-item {
-	
 	&:hover, &:active, &:focus {
 		color: $white;
 	}
@@ -59,8 +61,11 @@ $gramble-padding: 3%;
 		opacity: 0;
 		@include transition(all 300ms ease-out);
 	}
-	&:hover .grambleitem-content {
-		background-color: rgba($pink, 0.8);
+	// hover cover, cycles through colours in $gramble-colors array
+	@for $i from 1 through length($gramble-colors) {
+	    &:nth-of-type(#{length($gramble-colors)}n+#{$i}):hover .grambleitem-content {
+	        background-color: rgba(nth($gramble-colors, $i), 0.8);
+	    }
 	}
 	&:hover .readmore-link { 
 		opacity: 1;
