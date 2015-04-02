@@ -12,10 +12,16 @@ $round-button-color: $pink;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	display: -ms-flexbox;
+	-ms-flex-pack: center;
+    -ms-flex-align: center;
 	@include transition(all 0.3s ease-in-out);
-	img {
+	img, svg {
 		max-width: 40%;
 		max-height: 40%;
+	}
+	g {
+		stroke-width:0; // removes any strokes on button icon svgs (to make them cleaner & easier to style)
 	}
 	&:hover {
 		@include transform(scale(1.05));

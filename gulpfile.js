@@ -5,6 +5,7 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   embedlr = require('gulp-embedlr'),
   connect = require('connect');
+  preprocess = require('gulp-preprocess');  
 
 gulp.task('clean', function(){
   return gulp.src(['build/*'], {read:false})
@@ -48,7 +49,7 @@ gulp.task('templates', function() {
 
     // Embed livereload snippet
     .pipe(embedlr())
-
+    .pipe(preprocess())
     .pipe(gulp.dest('./build'));
 });
 

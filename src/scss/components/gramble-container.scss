@@ -9,13 +9,18 @@
 		@include media($mobile) {
 			margin: $card-margin auto;
 		}
-		img {
+		g { 
+			fill: $blue; 
+			stroke-width: 2px;
+			stroke: $blue;
+		}
+		img, svg {
 			@include transition-property(transform);
 			@include transition-duration(1.4s);
 			@include transition-timing-function(ease-in);
 		}
 		&:active {
-			img {
+			img, svg {
 				@include transform(rotate(-360deg));
 				@include transition-property(transform);
 				@include transition-duration(0.3s);

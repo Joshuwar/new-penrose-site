@@ -10,11 +10,14 @@
 	background-color: tint($light-gray, 50%);
 	text-align: center;
 	display: flex;
+	display: -ms-flexbox;
+	-ms-flex-pack: center;
+    -ms-flex-align: center;
 	align-items: center;
 	justify-content: center;
 	float: left;
 	margin-right: 0;
-	margin-bottom: 0;
+	margin-bottom: 0;    
 	
 	&:before {
 		content: "";
@@ -22,9 +25,13 @@
 		padding-top: 100%; 	// makes height = width
 	}
 
-	img {
+	img, svg {
 		max-width: 75%;
 		max-height: 75%;
+	}
+
+	g {
+		fill: $dark-gray;
 	}
 
 	@include media($tablet-portrait) {
