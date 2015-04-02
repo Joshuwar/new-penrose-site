@@ -35,7 +35,7 @@
 		-o-background-size: cover;
 		background-size: cover;
 		height: calc(100% - 8vw);
-		min-height: 700px;
+		min-height: 620px;
 	}
 	.case-study {
 		@include media($desktop) {
