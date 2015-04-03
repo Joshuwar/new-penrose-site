@@ -43,36 +43,8 @@ gulp.task('javascripts', function() {
     .pipe(gulp.dest('./build/javascripts'));
 });
 
-// confusingly named task at the moment...
+// get all the HTML templates, render them into pages and preprocess
 gulp.task('templates', function() {
-  gulp.src('./src/*.html')
-
-    // Embed livereload snippet
-    .pipe(embedlr())
-    .pipe(preprocess())
-    .pipe(gulp.dest('./build'));
-});
-
-gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'javascripts', 'images', 'fonts', 'templates', 'pages');
-});
-
-gulp.task('watch', ['default', 'server'], function() {
-  gulp.watch('./src/scss/**/*.scss', ['styles']);
-  gulp.watch('./src/javascripts/**/*.*', ['javascripts']);
-  gulp.watch('./src/images/**/*.*', ['images']);
-  gulp.watch('./src/fonts/**/*.*', ['fonts']);
-  gulp.watch('./src/*.html', ['templates']);
-  gulp.watch('./src/partials/*.html', ['templates']);
-  gulp.watch('./src/templates/*.hbs', ['pages']);
-
-  var server = livereload();
-  gulp.watch('build/**').on('change', function(file) {
-    server.changed(file.path);
-  });
-});
-
-gulp.task('pages', function() {
   var tap = require('gulp-tap');
   var Handlebars = require('handlebars');
   var path = require('path');
@@ -85,20 +57,37 @@ gulp.task('pages', function() {
           partial = /(.+)\.html/.exec(file).pop();
       Handlebars.registerPartial(partial, source);
   });
-  // collect templates
+  // collect templates, render and preprocess
   gulp.src([
-    "./src/templates/**.hbs",
-    "./src/pattern-book.html"
-    ])
-    .pipe(tap(function(file) {
-      var template = Handlebars.compile(file.contents.toString());
-      var html = template({ title: "A title could go here"});
-      file.contents = new Buffer(html, "utf-8");
-    }))
-    .pipe(rename(function(path) {
-      path.extname = ".html";
-    }))
-    .pipe(gulp.dest("build/pages"));
+    "./src/**/templates/*.html",
+    "./src/**.html"
+  ])
+  .pipe(tap(function(file) {
+    var template = Handlebars.compile(file.contents.toString());
+    var html = template({ title: "A title could go here"});
+    file.contents = new Buffer(html, "utf-8");
+  }))
+  .pipe(preprocess())
+  // Embed livereload snippet
+  .pipe(embedlr())
+  .pipe(gulp.dest("build"));
+});
+
+gulp.task('default', ['clean'], function() {
+  gulp.start('styles', 'javascripts', 'images', 'fonts', 'templates');
+});
+
+gulp.task('watch', ['default', 'server'], function() {
+  gulp.watch('./src/scss/**/*.scss', ['styles']);
+  gulp.watch('./src/javascripts/**/*.*', ['javascripts']);
+  gulp.watch('./src/images/**/*.*', ['images']);
+  gulp.watch('./src/fonts/**/*.*', ['fonts']);
+  gulp.watch(['./src/**/*.html', './src/partials/*.html'], ['templates']);
+
+  var server = livereload();
+  gulp.watch('build/**').on('change', function(file) {
+    server.changed(file.path);
+  });
 });
 
 gulp.task('server', function(next) {
