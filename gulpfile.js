@@ -63,6 +63,7 @@ gulp.task('watch', ['default', 'server'], function() {
   gulp.watch('./src/images/**/*.*', ['images']);
   gulp.watch('./src/fonts/**/*.*', ['fonts']);
   gulp.watch('./src/*.html', ['templates']);
+  gulp.watch('./src/partials/*.html', ['templates']);
   gulp.watch('./src/templates/*.hbs', ['pages']);
 
   var server = livereload();
@@ -85,7 +86,10 @@ gulp.task('pages', function() {
       Handlebars.registerPartial(partial, source);
   });
   // collect templates
-  gulp.src("./src/templates/**.hbs")
+  gulp.src([
+    "./src/templates/**.hbs",
+    "./src/pattern-book.html"
+    ])
     .pipe(tap(function(file) {
       var template = Handlebars.compile(file.contents.toString());
       var html = template({ title: "A title could go here"});
